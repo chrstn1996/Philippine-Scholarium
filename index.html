@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Scholarium — the modern home of Philippine jurisprudence." />
+  <title>Scholarium | Philippine Jurisprudence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Scholarium home">
+        <span class="brand-crest">⚖</span>
+        <span><strong>SCHOLARIUM</strong><small>Philippine Jurisprudence</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">☰</button>
+      <nav id="siteNav" class="site-nav" aria-label="Primary navigation">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#landmark">Landmark Cases</a>
+        <button class="nav-login" data-open-auth="login">Log In</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <img class="hero-image" src="hero-library.png" alt="A grand dark-academia library lined with books" />
+        <div class="hero-overlay"></div>
+        <div class="dust" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <div class="academy-seal" aria-hidden="true"><span>⚖</span><small>EST. MMXXVI</small></div>
+          <p class="eyebrow">A DIGITAL ACADEMY OF PHILIPPINE LAW</p>
+          <h1>Where Philippine Jurisprudence Finds Its Home.</h1>
+          <p class="intro">Scholarium is the modern home of Philippine jurisprudence, thoughtfully designed for law students, professors, lawyers, and future members of the Bar.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" data-open-auth="signup">Get Started</button>
+            <button class="secondary-btn" id="continueGuest">Continue as Guest</button>
+          </div>
+          <a class="scroll-cue" href="#about">Enter the archive <span>↓</span></a>
+        </div>
+      </section>
+
+      <section class="section about" id="about">
+        <div>
+          <p class="eyebrow">THE SCHOLARIUM VISION</p>
+          <h2>Study law in a space built for depth, memory, and clarity.</h2>
+        </div>
+        <p>More than a digest collection, Scholarium is a living legal library. Read landmark rulings, organize notes, preserve editorial history, and prepare recitation-ready briefs in one calm, scholarly workspace.</p>
+      </section>
+
+      <section class="section feature-grid" aria-label="Scholarium features">
+        <article><span>01</span><h3>Curated Jurisprudence</h3><p>Explore foundational Philippine cases by subject, doctrine, date, and bar relevance.</p></article>
+        <article><span>02</span><h3>Recitation-Ready Briefs</h3><p>Build complete case briefs with facts, issues, reasoning, ratio, doctrine, and recitation notes.</p></article>
+        <article><span>03</span><h3>A Living Archive</h3><p>Keep community edits, sources, and version history without losing earlier scholarship.</p></article>
+      </section>
+
+      <section class="section subjects" id="subjects">
+        <div class="section-heading"><p class="eyebrow">THE READING ROOMS</p><h2>Browse by subject</h2></div>
+        <div class="subject-list">
+          <button data-subject="Constitutional Law">Constitutional Law <span>→</span></button>
+          <button data-subject="Civil Law">Civil Law <span>→</span></button>
+          <button data-subject="Criminal Law">Criminal Law <span>→</span></button>
+          <button data-subject="Labor Law">Labor Law <span>→</span></button>
+          <button data-subject="Taxation Law">Taxation Law <span>→</span></button>
+          <button data-subject="Remedial Law">Remedial Law <span>→</span></button>
+        </div>
+      </section>
+
+      <section class="landmark" id="landmark">
+        <div class="landmark-shade"></div>
+        <div class="landmark-copy">
+          <p class="eyebrow">LANDMARK COLLECTION</p>
+          <h2>The decisions every Philippine law student should know.</h2>
+          <p>Begin with constitutional foundations, defining doctrines, and cases that continue to shape legal education and public life.</p>
+          <button class="primary-btn" id="exploreCases">Explore Landmark Cases</button>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="brand compact"><span class="brand-crest">⚖</span><span><strong>SCHOLARIUM</strong><small>Lex • Memoria • Disciplina</small></span></div><p>Built as a thoughtful study hall for Philippine law.</p></footer>
+  </div>
+
+  <dialog id="authDialog" class="auth-dialog">
+    <button class="dialog-close" id="closeAuth" aria-label="Close">×</button>
+    <p class="eyebrow">WELCOME TO SCHOLARIUM</p>
+    <h2 id="authHeading">Log in</h2>
+    <p class="dialog-copy">Continue your legal study where you left off.</p>
+    <div class="auth-tabs"><button class="active" data-tab="login">Log In</button><button data-tab="signup">Sign Up</button></div>
+    <form id="loginForm" class="auth-form">
+      <label>Email<input id="loginEmail" type="email" required autocomplete="email" /></label>
+      <label>Password<input id="loginPassword" type="password" required minlength="6" autocomplete="current-password" /></label>
+      <button class="primary-btn" type="submit">Enter Scholarium</button>
+    </form>
+    <form id="signupForm" class="auth-form hidden">
+      <label>Name<input id="signupName" type="text" required maxlength="50" autocomplete="name" /></label>
+      <label>Email<input id="signupEmail" type="email" required autocomplete="email" /></label>
+      <label>Password<input id="signupPassword" type="password" required minlength="6" autocomplete="new-password" /></label>
+      <button class="primary-btn" type="submit">Create Account</button>
+    </form>
+    <div class="divider"><span>or</span></div>
+    <button class="secondary-btn full" id="dialogGuest">Continue as Guest</button>
+    <p id="authMessage" class="auth-message" role="status"></p>
+    <p class="fine-print">This prototype stores accounts only in this browser.</p>
+  </dialog>
+
+  <script src="home.js"></script>
+</body>
+</html>
